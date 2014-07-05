@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionDispatch::Cookies::SerializedCookieJars</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+            <span>Ruby on Rails 4.1.1</span><br />
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionDispatch::Cookies::SerializedCookieJars 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/__/__/__/__/Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2_0_0/gems/actionpack-4_1_1/lib/action_dispatch/middleware/cookies_rb.html">C:/Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-deserialize">deserialize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-needs_migration-3F">needs_migration?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-serialize">serialize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-serializer">serializer</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">MARSHAL_SIGNATURE</td>
+            <td>=</td>
+            <td class="attr-value">&quot;\x04\x08&quot;.freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-deserialize">
+            
+              <b>deserialize</b>(name, value)
+            
+            <a href="../../../classes/ActionDispatch/Cookies/SerializedCookieJars.html#method-i-deserialize" name="method-i-deserialize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deserialize_source')" id="l_method-i-deserialize_source">show</a>
+                
+              </p>
+              <div id="method-i-deserialize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File ../../../../Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb, line 421</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deserialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">needs_migration?</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">value</span>).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-identifier">name</span>] = { <span class="ruby-identifier">value</span><span class="ruby-operator">:</span> <span class="ruby-identifier">v</span> }
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">serializer</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-needs_migration-3F">
+            
+              <b>needs_migration?</b>(value)
+            
+            <a href="../../../classes/ActionDispatch/Cookies/SerializedCookieJars.html#method-i-needs_migration-3F" name="method-i-needs_migration-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-needs_migration-3F_source')" id="l_method-i-needs_migration-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-needs_migration-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File ../../../../Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb, line 413</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">needs_migration?</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:serializer</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:hybrid</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-constant">MARSHAL_SIGNATURE</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-serialize">
+            
+              <b>serialize</b>(name, value)
+            
+            <a href="../../../classes/ActionDispatch/Cookies/SerializedCookieJars.html#method-i-serialize" name="method-i-serialize" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-serialize_source')" id="l_method-i-serialize_source">show</a>
+                
+              </p>
+              <div id="method-i-serialize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File ../../../../Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">serialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">serializer</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-serializer">
+            
+              <b>serializer</b>()
+            
+            <a href="../../../classes/ActionDispatch/Cookies/SerializedCookieJars.html#method-i-serializer" name="method-i-serializer" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-serializer_source')" id="l_method-i-serializer_source">show</a>
+                
+              </p>
+              <div id="method-i-serializer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File ../../../../Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/cookies.rb, line 433</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">serializer</span>
+  <span class="ruby-identifier">serializer</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:serializer</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:marshal</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">serializer</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:marshal</span>
+    <span class="ruby-constant">Marshal</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:json</span>, <span class="ruby-value">:hybrid</span>
+    <span class="ruby-constant">JsonSerializer</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">serializer</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

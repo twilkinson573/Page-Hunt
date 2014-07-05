@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::Core</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+            <span>Ruby on Rails 4.1.1</span><br />
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveRecord::Core 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/__/__/__/__/Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2_0_0/gems/activerecord-4_1_1/lib/active_record/core_rb.html">C:/Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/activerecord-4.1.1/lib/active_record/core.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Core/ClassMethods.html">ActiveRecord::Core::ClassMethods</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-configurations">configurations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-configurations-3D">configurations=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-configurations">
+            
+              <b>configurations</b>()
+            
+            <a href="../../classes/ActiveRecord/Core.html#method-c-configurations" name="method-c-configurations" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns fully resolved configurations hash</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-configurations_source')" id="l_method-c-configurations_source">show</a>
+                
+              </p>
+              <div id="method-c-configurations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File ../../../../Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/activerecord-4.1.1/lib/active_record/core.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">configurations</span>
+  <span class="ruby-identifier">@@configurations</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-configurations-3D">
+            
+              <b>configurations=</b>(config)
+            
+            <a href="../../classes/ActiveRecord/Core.html#method-c-configurations-3D" name="method-c-configurations-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>:singleton-method: Contains the database configuration - as is typically
+stored in config/database.yml - as a <a href="../Hash.html">Hash</a>.</p>
+
+<p>For example, the following database.yml…</p>
+
+<pre><code>development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+
+production:
+  adapter: sqlite3
+  database: db/production.sqlite3</code></pre>
+
+<p>…would result in <a
+href="Core.html#method-c-configurations">::configurations</a> to look like
+this:</p>
+
+<pre><code>{
+   &#39;development&#39; =&gt; {
+      &#39;adapter&#39;  =&gt; &#39;sqlite3&#39;,
+      &#39;database&#39; =&gt; &#39;db/development.sqlite3&#39;
+   },
+   &#39;production&#39; =&gt; {
+      &#39;adapter&#39;  =&gt; &#39;sqlite3&#39;,
+      &#39;database&#39; =&gt; &#39;db/production.sqlite3&#39;
+   }
+}
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-configurations-3D_source')" id="l_method-c-configurations-3D_source">show</a>
+                
+              </p>
+              <div id="method-c-configurations-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File ../../../../Distributions/Ruby/Ruby200-x64/lib/ruby/gems/2.0.0/gems/activerecord-4.1.1/lib/active_record/core.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">configurations=</span>(<span class="ruby-identifier">config</span>)
+  <span class="ruby-identifier">@@configurations</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionHandling</span><span class="ruby-operator">::</span><span class="ruby-constant">MergeAndResolveDefaultUrlConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>).<span class="ruby-identifier">resolve</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    
