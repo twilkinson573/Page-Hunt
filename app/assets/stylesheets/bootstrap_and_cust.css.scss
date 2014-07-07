@@ -37,7 +37,7 @@
 .data-sub {
     padding-bottom: 1em;
     padding-right: 1em;
-    text-color: #bdc3c7;
+    color: #7f8c8d;
     font-size: 22px;
 }
 
@@ -49,6 +49,17 @@
 
 .flash {
     display: none;
+}
+
+.atext {
+    color: #7f8c8d;
+    font-size: 20px;
+    line-height: 2em;
+    padding-bottom: 10px;
+}
+
+.aheader {
+    color: #7f8c8d;
 }
 
 #sidebar-wrapper {
