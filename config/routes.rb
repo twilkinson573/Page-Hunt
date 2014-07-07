@@ -1,8 +1,6 @@
-#Rails.application.routes.draw do
-# get 'welcome/index'
-#  
   Blog::Application.routes.draw do
     
+  devise_for :users
     resources :articles do
       resources :comments
     end
