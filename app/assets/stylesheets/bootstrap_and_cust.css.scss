@@ -1,15 +1,61 @@
 @import 'bootstrap';
 
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
 #wrapper {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
+}
+
+.table-main {
+
+}
+
+.row-main {
+    
+}
+
+.data-title {
+    padding-bottom: 1em;
+    padding-right: 1em;
+    vertical-align: top;
+    }
+
+.data-title a {
+    color: black;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.data-title a:hover {
+    text-decoration: none;
+    color: #DD7500;
+}
+
+.data-sub {
+    padding-bottom: 1em;
+    padding-right: 1em;
+    text-color: #bdc3c7;
+    font-size: 22px;
+}
+
+.data-link {
+    padding-bottom: 1em;
+    padding-right: 1em;
+    vertical-align: top;
+}
+
+.flash {
+    display: none;
 }
 
 #sidebar-wrapper {
   margin-left: -250px;
   left: 250px;
   width: 250px;
-  background: #000;
+  background: #bdc3c7;
   position: fixed;
   height: 100%;
   overflow-y: auto;
@@ -40,7 +86,7 @@
 }
 
 .sidebar-nav li a {
-  color: #999999;
+  color: #2c3e50;
   display: block;
   text-decoration: none;
   vertical-align: middle;
@@ -60,11 +106,12 @@
 .sidebar-nav > .sidebar-brand {
   height: 65px;
   line-height: 60px;
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999999;
+  color: #2c3e50;
+  font-weight: 800;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {

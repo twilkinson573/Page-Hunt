@@ -2,24 +2,28 @@
   
 <% end %>
  
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
- 
+<table class="table-main">
+
 <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.text %></td>
-    <td><%= link_to 'Show', article_path(article) %></td>
+  <tr class="row-main">
+    <td class="data-title">
+      <%= link_to article_path(article) do %>
+        <%= article.title %>
+      <% end %>
+    </td>
+    <td class="data-sub"><%= article.text %></td>
     <% if article.user == current_user %>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-                      method: :delete, data: { confirm: 'Delete your post?' } %></td>
+      <td class="data-link">
+        <%= link_to edit_article_path(article) do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+      </td>
+      <td class="data-link">
+        <%= link_to article_path(article), method: :delete, data: { confirm: 'Delete your post?' } do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </td>
     <% end %>
-  </tr>
   </tr>
 <% end %>
 </table>
