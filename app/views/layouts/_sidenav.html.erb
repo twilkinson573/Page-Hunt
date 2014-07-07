@@ -3,20 +3,23 @@
     <%= link_to "Yarn", root_path %>
   </li>
   <li>
-    <%= link_to "My Blog", articles_path %>
-  </li>
-  <li>
-    <%= link_to 'New article', new_article_path %>
-  </li>
-  <li>
-    <%= link_to "Sign Up", new_user_registration_path %>
-  </li>
-  <li>
-    <%= link_to "Log In", new_user_session_path %>
-  </li>
-  <li>
-    <%= link_to "Log Out", destroy_user_session_path, method: "delete" %>
-  </li>
+      <%= link_to 'About', about_path %>
+    </li>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to 'New article', new_article_path %>
+    </li>
+    <li>
+      <%= link_to "Log Out", destroy_user_session_path, method: "delete" %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to "Sign Up", new_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "Log In", new_user_session_path %>
+    </li>
+  <% end %>
 </ul>
 <div class="flash">
   <% flash.each do |name, msg| %>

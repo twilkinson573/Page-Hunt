@@ -1,5 +1,5 @@
 #Yarn
 
-Write and publish short stories then receive feedback from your peers.
+Get feedback on your ideas, no matter how crazy! 
 
 by Thomas Wilkinson
