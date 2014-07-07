@@ -1,3 +1,8 @@
 <h1>Ruby Web blog</h1>
 <%= link_to "My Blog", controller: "articles" %>
 <%= link_to 'New article', new_article_path %>
+<%= link_to "Sign Up", new_user_registration_path %>
+<%= link_to "Log In", new_user_session_path %>
+<%= link_to "Log Out", destroy_user_session_path, method: "delete" %>
+
+
