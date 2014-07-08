@@ -34,6 +34,9 @@ Rails.application.configure do
   
   #Default url for Devise
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  
+  #Directing Paperclip to ImageMagick
+  Paperclip.options[:command_path] = 'C:\Distributions\ImageMagick\ImageMagick-6.8.8-Q16'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

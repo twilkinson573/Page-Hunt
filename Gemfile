@@ -24,6 +24,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "bootstrap-sass", "~> 3.2.0"
 #Devise for user logins
 gem "devise"
+#Paperclip for image upload
+gem "paperclip", github: "thoughtbot/paperclip"
+#For icon font
+gem "font-awesome-rails"
 
 
 group :development, :test do

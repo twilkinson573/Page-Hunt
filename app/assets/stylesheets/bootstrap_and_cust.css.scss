@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import "font-awesome";
 
 * {
     font-family: 'Raleway', sans-serif;
@@ -16,6 +17,20 @@
 .row-main {
     
 }
+
+.user-thumb-with-tooltip {
+    line-height: 0;
+	display: inline-block;
+	margin: 5px;
+	border-radius: 50%;
+	border: 3px solid #bdc3c7;	
+	transition: linear 0.25s;
+}
+
+.user-thumb-with-tooltip img {
+    border-radius: 50%;
+}
+
 
 .data-title {
     padding-bottom: 1em;

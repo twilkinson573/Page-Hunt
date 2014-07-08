@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
-  has_many :comments, dependent: :destroy
-  validates :title, presence: true, length: {minimum: 5}
   
+  validates :title, presence: true, length: { maximum: 20 }
+  validates :text, presence: true
+  
+  has_many :comments, dependent: :destroy
   belongs_to :user
 end

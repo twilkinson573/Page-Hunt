@@ -1,16 +1,19 @@
 <ul class="sidebar-nav">
   <br/><br/><br/>
   <li class="sidebar-brand">
-    <%= link_to "Invention Hunt", root_path %>
+    <%== link_to "Invention Hunt", root_path %>
   </li>
   <li>
-      <%= link_to 'About', about_path %>
-    </li>
+    <%= link_to 'About', about_path %>
+  </li>
   <% if user_signed_in? %>
     <li>
       <%= link_to new_article_path do %>
         New Pitch<span class="glyphicon glyphicon-plus"></span> 
        <% end %> 
+    </li>
+    <li>
+      <%= link_to "Settings", edit_user_registration_path %>
     </li>
     <li>
       <%= link_to "Log Out", destroy_user_session_path, method: "delete" %>

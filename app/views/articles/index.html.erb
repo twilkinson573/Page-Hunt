@@ -6,6 +6,9 @@
 
 <% @articles.each do |article| %>
   <tr class="row-main">
+    <td class="user-thumb-with-tooltip">
+      <%= image_tag article.user.avatar.url(:thumb) %>
+    </td>
     <td class="data-title">
       <%= link_to article_path(article) do %>
         <%= article.title %>
