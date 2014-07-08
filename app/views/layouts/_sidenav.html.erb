@@ -9,11 +9,14 @@
   <% if user_signed_in? %>
     <li>
       <%= link_to new_article_path do %>
-        New Pitch<span class="glyphicon glyphicon-plus"></span> 
+        New Pitch<i class="fa fa-lightbulb-o"></i> 
        <% end %> 
     </li>
     <li>
-      <%= link_to "Settings", edit_user_registration_path %>
+      <%= link_to edit_user_registration_path do %>
+        Settings 
+        <i class="fa fa-cog"></i>
+      <% end %>
     </li>
     <li>
       <%= link_to "Log Out", destroy_user_session_path, method: "delete" %>
