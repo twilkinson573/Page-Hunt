@@ -1,18 +1,20 @@
-<p>
-  <strong>Title:</strong>
+<% content_for :header do %>
   <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<% end %>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+<p class="ahead">The Pitch</p>
+<p class="atext"><%= @article.text %>
+<% if @article.user == current_user %>
+  <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
 
-<h2>Add a comment:</h2>
+<p class="ahead">Feedback</p>
+<% if @article.comments.count == 0 %>
+  <p class="atext">Be the first to give feedback!</p>
+<% else %>
+  <%= render @article.comments %>
+<% end %>
+<br/><br/>
+<p class="ahead">Give Feedback</p>
 <%= render "comments/form" %>
 
-<%= link_to 'Back', articles_path %>
-| <%= link_to 'Edit', edit_article_path(@article) %>

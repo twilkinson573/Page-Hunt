@@ -1,13 +1,26 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+  
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :commenter, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label :feedback %>
+        <%= f.text_area :body, autofocus: true, class: "form-control" %>
+      </div>
+        
+      <div class="form-group">
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+  

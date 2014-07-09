@@ -1,5 +1,5 @@
 <% content_for :header do %>
-  
+  Pitches
 <% end %>
  
 <table class="table-main">
@@ -14,7 +14,11 @@
         <%= article.title %>
       <% end %>
     </td>
-    <td class="data-sub"><%= article.text %></td>
+    <td class="data-sub"><%= article.text[0..70] %>
+      <%if article.text.length > 70 %>
+        ...
+      <% end %>
+    </td>
     <% if article.user == current_user %>
       <td class="data-link">
         <%= link_to edit_article_path(article) do %>
