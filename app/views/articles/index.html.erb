@@ -26,12 +26,12 @@
     <% if article.user == current_user %>
       <td class="data-link">
         <%= link_to edit_article_path(article) do %>
-          <span class="glyphicon glyphicon-edit"></span>
+          <span class="fa fa-edit"></span>
         <% end %>
       </td>
       <td class="data-link">
         <%= link_to article_path(article), method: :delete, data: { confirm: 'Delete your post?' } do %>
-          <span class="glyphicon glyphicon-trash"></span>
+          <span class="fa fa-trash-o"></span>
         <% end %>
       </td>
     <% end %>
