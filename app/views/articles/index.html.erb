@@ -7,6 +7,7 @@
 <% @articles.each do |article| %>
   <tr class="row-main">
     <td class="user-thumb-with-tooltip">
+      <!--<%= article.user.name %>-->
       <%= image_tag article.user.avatar.url(:thumb) %>
     </td>
     <td class="data-title">
@@ -19,6 +20,9 @@
         ...
       <% end %>
     </td>
+   <!-- <td>
+      <% article.comments.count %> comments
+    </td>-->
     <% if article.user == current_user %>
       <td class="data-link">
         <%= link_to edit_article_path(article) do %>

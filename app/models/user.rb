@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
          
   validates :name, presence: true
          
-  has_many :articles      
+  has_many :articles
+  has_many :comments
 end

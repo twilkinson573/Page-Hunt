@@ -19,6 +19,9 @@
       <div class="form-group">
         <%= f.submit "Post", class: "btn btn-primary" %>
       </div>
+      
+      <% f.hidden_field :user_id, :value => @user_id %>
+      
     <% end %>
   </div>
 </div>
