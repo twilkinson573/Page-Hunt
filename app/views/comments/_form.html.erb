@@ -7,7 +7,15 @@
         <%= f.text_field :commenter, autofocus: true, class: "form-control" %>
       </div>
     </div>
+      <div class="col-lg-1">
+    <div class="form-group">
+      <%= f.label :score %>
+      <%= f.number_field :score, autofocus: true, class: "form-control", min: 0, max: 10 %>
+    </div>
   </div>
+  </div>
+    
+
   
   <div class="row">
     <div class="col-lg-6">
