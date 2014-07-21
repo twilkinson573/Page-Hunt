@@ -1,16 +1,37 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
-  
+
+  <% if @article.comments.build.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.comments.build.errors.count, "error") %> prohibited this pin from being saved:</h2>
+
+      <ul>
+      <% @article.comments.build.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
   <div class="row">
     <div class="col-lg-3">
       <div class="form-group">
-        <%= f.label :name %>
+        <%= f.label :name %><span class="ast">*</span>
         <%= f.text_field :commenter, autofocus: true, class: "form-control" %>
       </div>
     </div>
       <div class="col-lg-1">
     <div class="form-group">
-      <%= f.label :score %>
-      <%= f.number_field :score, autofocus: true, class: "form-control", min: 0, max: 10 %>
+      
+      <%= f.label :score %><span class="ast"> = <span id="ex6SliderVal"> 5</span></span>
+      <%= f.text_field :score, id: 'ex6', type: 'text',
+                 data: {'slider-id' => 'ex6Slider',
+                        'slider-min' => '0',
+                        'slider-max' => '10',
+                        'slider-step' => '1',
+                        'slider-value' => '5',
+                        "slider-tooltip" => "hide" } %>
+     <!-- <%= f.label :score %><span class="ast">*</p>
+      <%= f.number_field :score, autofocus: true, class: "form-control", min: 0, max: 10 %>-->
     </div>
   </div>
   </div>
@@ -20,9 +41,11 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <%= f.label :feedback %>
+        <%= f.label :feedback %><span class="ast">*</span>
         <%= f.text_area :body, autofocus: true, class: "form-control" %>
       </div>
+      
+      <p class="ahead">* Required</p>
         
       <div class="form-group">
         <%= f.submit "Post", class: "btn btn-primary" %>

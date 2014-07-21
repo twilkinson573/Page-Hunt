@@ -28,6 +28,8 @@ gem "devise"
 gem "paperclip", github: "thoughtbot/paperclip"
 #For icon font
 gem "font-awesome-rails"
+#Boostrap slider for score input
+gem 'bootstrap-slider-rails'
 
 
 group :development, :test do
