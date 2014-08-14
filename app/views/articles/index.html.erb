@@ -16,9 +16,18 @@
       <% end %>
     </td>
     <td class="data-sub"><%= article.text[0..70] %>
-      <%if article.text.length > 70 %>
+      <% if article.text.length > 70 %>
         ...
       <% end %>
+      <span class="details">
+        <%= link_to article_path(article) do %>
+          <% if article.comments.count > 0 %>
+            <%= article.comments.count %> comments
+            <% else %>
+              View Details
+          <% end %>
+        <% end %>
+      </p>
     </td>
    <!-- <td>
       <% article.comments.count %> comments
