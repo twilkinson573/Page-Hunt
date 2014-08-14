@@ -11,7 +11,7 @@
       <%= image_tag article.user.avatar.url(:thumb) %>
     </td>
     <td class="data-title">
-      <%= link_to article_path(article) do %>
+      <%= link_to article.link, :target => '_blank' do %>
         <%= article.title %>
       <% end %>
     </td>
