@@ -13,23 +13,26 @@
   <% end %>
     
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-sm-3">
       <div class="form-group">
-        <%= f.label :name %><span class="ast">*</span>
-        <%= f.text_field :commenter, autofocus: true, class: "form-control" %>
+        
+        <%= f.text_field :commenter, autofocus: true, class: "form-control", placeholder: "Name*", label: false %>
       </div>
     </div>
-      <div class="col-lg-1">
+      <div class="col-sm-5">
     <div class="form-group">
-      
-      <%= f.label :score %><span class="ast"> = <span id="ex6SliderVal"> 5</span></span>
-      <%= f.text_field :score, id: 'ex6', type: 'text',
+      <div class="col-sm-3">
+      Rating <span id="ex6SliderVal"> 5</span>
+      </div>
+      <div class="col-sm-3">
+      <%= f.text_field :score, id: 'ex6', type: 'text', label: false,
                  data: {'slider-id' => 'ex6Slider',
                         'slider-min' => '0',
                         'slider-max' => '10',
                         'slider-step' => '1',
                         'slider-value' => '5',
                         "slider-tooltip" => "hide" } %>
+      </div>
      <!-- <%= f.label :score %><span class="ast">*</p>
       <%= f.number_field :score, autofocus: true, class: "form-control", min: 0, max: 10 %>-->
     </div>
@@ -41,8 +44,8 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <%= f.label :feedback %><span class="ast">*</span>
-        <%= f.text_area :body, autofocus: true, class: "form-control" %>
+        
+        <%= f.text_area :body, autofocus: true, class: "form-control", placeholder: "Comment*", label: false %>
       </div>
       
       <p class="ahead">* Required</p>

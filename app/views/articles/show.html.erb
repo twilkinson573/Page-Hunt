@@ -1,20 +1,24 @@
 <% content_for :header do %>
-  <%= @article.title %>
+  <%= link_to @article.link, :target => '_blank' do %>
+    <%= @article.title %>
+  <% end %>
 <% end %>
 
-<p class="ahead">The Pitch</p>
 <p class="atext"><%= @article.text %>
 <% if @article.user == current_user %>
   <%= link_to 'Edit', edit_article_path(@article) %>
 <% end %>
 
-<p class="ahead">Feedback</p>
+<p class="ahead">
+  <%= @article.comments.count %> comments
+</p>
+<div class="abody">
 <% if @article.comments.count == 0 %>
   <p class="atext">Be the first to give feedback!</p>
 <% else %>
   <%= render @article.comments %>
 <% end %>
-<br/><br/>
-<p class="ahead">Give Feedback</p>
+<p class="ahead">Comment</p>
 <%= render "comments/form" %>
+</div>
 
