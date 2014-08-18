@@ -1,5 +1,13 @@
-<p class="comment-body"><span class="score"><%= comment.score %></span> <%= comment.body %></p>
-
+<table>
+    <tr class="comrow">
+        <td class="comscore">
+            <span class="score"><%= comment.score %></span>
+        </td>
+        <td class="combody">
+            <span class="comment-body"> <%= comment.body %></span>
+        </td>
+    </tr>
+</table>
   
   <!--<p>
   <#%= link_to 'Destroy Comment', [comment.article, comment],

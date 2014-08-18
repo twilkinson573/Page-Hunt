@@ -13,12 +13,17 @@
   <%= @article.comments.count %> comments
 </p>
 <div class="abody">
+  <div class="commentbox">
 <% if @article.comments.count == 0 %>
   <p class="atext">Be the first to give feedback!</p>
 <% else %>
   <%= render @article.comments %>
 <% end %>
+</div>
+  <br/>
 <p class="ahead">Comment</p>
-<%= render "comments/form" %>
+
+  <%= render "comments/form" %>
+
 </div>
 
