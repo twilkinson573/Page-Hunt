@@ -13,24 +13,21 @@
   <% end %>
     
   <div class="row">
-      <div class="col-sm-5">
     <div class="form-group">
-      <div class="col-sm-3">
-      Rating <span id="ex6SliderVal"> 5</span>
-      </div>
-      <div class="col-sm-3">
-      <%= f.text_field :score, id: 'ex6', type: 'text', label: false,
-                 data: {'slider-id' => 'ex6Slider',
-                        'slider-min' => '0',
-                        'slider-max' => '10',
-                        'slider-step' => '1',
-                        'slider-value' => '5',
-                        "slider-tooltip" => "hide" } %>
+      <div class="col-sm-4" id="rateslider">
+        Rating: <span id="ex6SliderVal"> 5</span>
+      
+        <%= f.text_field :score, id: 'ex6', type: 'text', label: false,
+                   data: {'slider-id' => 'ex6Slider',
+                          'slider-min' => '0',
+                          'slider-max' => '10',
+                          'slider-step' => '1',
+                          'slider-value' => '5',
+                          "slider-tooltip" => "hide" } %>
       </div>
      <!-- <%= f.label :score %><span class="ast">*</p>
       <%= f.number_field :score, autofocus: true, class: "form-control", min: 0, max: 10 %>-->
     </div>
-  </div>
   </div>
     
 
