@@ -17,3 +17,6 @@
 
 #Ignore avatars
 public/system/users/avatars*
+
+# Ignore secrets.yml
+/config/secrets.yml
